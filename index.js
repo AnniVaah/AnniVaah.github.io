@@ -6,6 +6,10 @@ const port = 3000;
 app.set('view engine', 'pug');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Include helmet
+const helmet = require('helmet');
+app.use(helmet());
+
 let customers = [
     {id: '1588323375416', firstname: 'John', lastname: 'Johnson', email: 'john@johnson.com', phone: '8233243'},
     {id: '1588323375417', firstname: 'Mary', lastname: 'Smith', email: 'mary@smith.com', phone: '6654113'},
